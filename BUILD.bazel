@@ -1,0 +1,43 @@
+load("@build_bazel_rules_nodejs//:index.bzl", "pkg_web")
+load("@npm//@bazel/typescript:index.bzl", "ts_project")
+load("@npm//@bazel/rollup:index.bzl", "rollup_bundle")
+load("@npm//http-server:index.bzl", "http_server")
+
+ts_project(
+    name = "project",
+    srcs = glob([
+        "src/**/*.ts",
+        "src/**/*.tsx",
+    ]),
+    deps = [
+        "@npm//@types/react",
+        "@npm//@types/react-dom",
+        "@npm//react",
+        "@npm//react-dom",
+    ]
+)
+
+rollup_bundle(
+    name = "bundle",
+    entry_point = "src/index.js",
+    deps = [
+        ":project",
+        "@npm//:node_modules",
+    ],
+    config_file = "rollup.config.js",
+)
+
+pkg_web(
+    name = "app",
+    srcs = [
+        "index.html",
+        "favicon.png",
+        "bundle.js",
+    ],
+)
+
+http_server(
+    name = "server",
+    data = [":app"],
+    templated_args = ["app"],
+)
