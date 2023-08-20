@@ -9,4 +9,5 @@
 /node_modules
 
 /.idea
+/.ijwb
 *.iml
