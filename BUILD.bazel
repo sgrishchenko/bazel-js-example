@@ -26,13 +26,11 @@ rollup(
     entry_point = "src/index.js",
     node_modules = "//:node_modules",
     deps = [
-        ":project",
-    ],
-    data = [
         "//:node_modules/@rollup/plugin-node-resolve",
         "//:node_modules/@rollup/plugin-commonjs",
         "//:node_modules/@rollup/plugin-replace",
-    ]
+        ":project",
+    ],
 )
 
 http_server_bin.http_server_binary(
