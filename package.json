@@ -1,19 +1,17 @@
 {
-  "name": "bazel-js-example",
-  "version": "1.0.0",
-  "type": "module",
-  "devDependencies": {
-    "@rollup/plugin-commonjs": "^25.0.4",
-    "@rollup/plugin-node-resolve": "^15.2.0",
-    "@rollup/plugin-replace": "^5.0.2",
-    "@types/react": "^18.2.20",
-    "@types/react-dom": "^18.2.7",
-    "http-server": "^14.1.1",
-    "rollup": "^3.28.0",
-    "typescript": "^5.1.6"
+  "private": true,
+  "pnpm": {
+    "onlyBuiltDependencies": []
   },
   "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.1.4",
+    "typescript": "5.9.3",
+    "vite": "^7.3.1"
   }
 }
