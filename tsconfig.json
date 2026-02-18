@@ -6,7 +6,10 @@
     "moduleResolution": "bundler",
     "verbatimModuleSyntax": true,
 
-    "types": ["vite/client"],
+    "types": [
+      "@testing-library/jest-dom",
+      "vite/client",
+    ],
     "skipLibCheck": true,
 
     "strict": true,
