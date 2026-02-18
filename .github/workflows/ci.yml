@@ -21,6 +21,6 @@ jobs:
           repository-cache: true
           cache-save: ${{ github.event_name != 'pull_request' }}
 
-      - run: bazel build //:compile
-
       - run: bazel build //:build
+
+      - run: bazel test //:...
